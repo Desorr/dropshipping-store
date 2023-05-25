@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   Register
+{% endblock title %}
+
+{% block container %}
+  <!-- container start -->
+  <br><br>
+  <div class="container">
+      <form method="post" action="{% url 'register' %}">
+           {% csrf_token %}
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-5" >
+                  <h2 class="sub-heading-medium m-15px-b">Register</h2>
+              </div>
+          </div>
+          {% for field in user_form %}
+            <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                  <div class="quote-form-wrapper">
+                      <span style="color: red">{{ field.errors }}</span>
+                      {{ field.label_tag }}
+                      {{ field }}
+                  </div>
+              </div>
+            </div>
+          {% endfor %}
+
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                  <div class="quote-form-wrapper">
+                          <button type="submit" class="button button-xs button-lighter">Register</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+  <br><br>
+  <!-- container end -->
+{% endblock container %}

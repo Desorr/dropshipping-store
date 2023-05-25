@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   Log In
+{% endblock title %}
+
+{% block container %}
+
+<br><br>
+  <div class="container">
+      <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-5">
+                  <h2 class="sub-heading-medium m-15px-b">Log In</h2>
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-12 col-lg-4 col-md-4 offset-md-5">
+                  <h4 class="sub-heading-medium m-15px-b">{{ attention }}</h4>
+              </div>
+          </div>
+          {% for error in login_form.non_field_errors %}
+          <div class="row">
+          <div class="col-12 col-lg-4 col-md-4 offset-md-5">
+                  <h4 class="sub-heading-medium m-15px-b">{{ error }}</h4>
+              </div>
+          </div>
+          {% endfor %}
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                  <div class="quote-form-wrapper">
+                      <label class="form-label" for="id_username"></label>
+                      <input type="text" class="form-input" placeholder="Login"
+                             id="id_username" name="username" required>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                  <div class="quote-form-wrapper">
+                      <label class="form-label" for="id_password"></label>
+                          <input type="password" class="form-input" placeholder="Password"
+                                 id="id_password" name = "password" required>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12 col-lg-4 col-md-4 offset-md-4">
+                  <div class="quote-form-wrapper">
+                          <button type="submit" class="button button-xs button-lighter">Log In</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+  <br><br>
+  <!-- container end -->
+{% endblock container %}
