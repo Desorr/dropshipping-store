@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   Shop-details
+{% endblock title %}
+
+{% block container %}
+<!-- content start -->
+  <div class="main-content-wrapper">
+       <section class="breadcrumbs-custom bg-image" style="background-image: url('{% static 'images/bg-image-3.jpg' %}');">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-5">
+                      <div class="breadcrumb-wrapper">
+                          <h2>Информация о товаре</h2>
+                          <ul class="breadcrumbs-custom__path">
+                              <li><a href="{% url 'shop' %}">Товары</a></li>
+                              <li class="active">Информация о товаре</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+
+      <section class="selection">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-9">
+                      <div class="main-heading-block">
+                          <h2 class="main-heading"></h2>
+                          <!-- <p>EXERCITATIONEM ULLAM CORPORIS</p> -->
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-12 col-lg-4 col-md-3 item"></div>
+                  <div class="col-12 col-lg-4 col-md-6 item">
+
+                      <div class="card" style="color:#FF9A00">
+                          <img src="{{product.image_url}}" class="card-img-top" alt="color:#FF9A00">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>{{ product.name }}</b></h5>
+                                        <p class="card-text">
+                                        {{ product.description }}
+                                        </p>
+
+                                </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><b>Код товара: {{ product.code }}</b></li>
+                                        <li class="list-group-item"><b>Цена: {{ product.price }} руб.</b></li>
+                                    </ul>
+                                <div class="card-body">
+                                        <a class="button button-xs button-lighter" href="{% url 'shop' %}">К товарам</a>
+                                        <a class="button button-xs button-lighter" href="{% url 'contacts' %}">Купить</a>
+                                </div>
+                                </div>
+
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+
+      {% endblock container %}

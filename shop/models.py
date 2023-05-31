@@ -128,7 +128,7 @@ def auto_payment_unpaid_orders(user: User):
         order.status = Order.STATUS_PAID
         order.save()
         Payment.objects.create(user=user,
-                               amount=order.amount)
+                               amount=-order.amount)
 
 
 @receiver(post_save, sender=OrderItem)

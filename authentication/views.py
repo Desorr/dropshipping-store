@@ -1,7 +1,8 @@
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
-from authentication.forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm
 from django.views.generic import TemplateView
+
 
 def login_user(request):
     context = {'login_form': LoginForm()}

@@ -13,5 +13,3 @@ def contacts(request):
     return render(request, 'contacts.html')
 
 
-def typography(request):
-    return render(request, 'typography.html')

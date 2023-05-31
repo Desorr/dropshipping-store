@@ -62,17 +62,21 @@
                     <a class="dropdown-item" href="{% url 'register' %}">Register</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
                   </div>
-                  <div class="rd-navbar-main-item"><a class="button button-xs button-lighter" href="contacts.html">Get a quote</a></div>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="active"><a href="/">Home</a>
+                    <li class="active"><a href="/">Главная</a>
                     </li>
-                    <li><a href="{% url 'about_us' %}">About Us</a>
+                    <li><a href="{% url 'shop' %}">Товары</a>
                     </li>
-                    <li><a href="{% url 'typography' %}">Typography</a>
+                    <li><a href="{% url 'cart_view' %}">Корзина</a>
                     </li>
-                    <li><a href="{% url 'contacts' %}">Contacts</a>
+                    <li><a href="{% url 'contacts' %}">Контакты</a>
                     </li>
+                    <li><a href="{% url 'about_us' %}">О нас</a>
+                    </li>
+                    {% if user.is_staff %}
+                        <li><a href="{% url 'fill_database' %}">Наполнитель</a></li>
+                    {% endif %}
                   </ul>
                 </div>
               </div>
@@ -88,14 +92,10 @@
         <div class="container">
           <div class="footer-classic__main">
             <ul class="list-nav-bordered">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a>
-              </li>
-              <li><a href="#">Production</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Media</a></li>
-              <li><a href="contacts.html">Contacts</a>
-              </li>
+              <li><a href="{% url 'index' %}">Главная</a></li>
+              <li><a href="{% url 'shop' %}">Товары</a></li>
+              <li><a href="{% url 'cart_view' %}">Корзина</a></li>
+              <li><a href="{% url 'contacts' %}">Контакты</a></li>
             </ul>
           </div>
           <div class="divider"></div>
@@ -103,16 +103,14 @@
             <div class="row row-20">
               <div class="col-md-6 text-md-left">
                 <!-- Rights-->
-                <p class="rights"><span>Quarex</span><span>&nbsp;&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+                <p class="rights"><span>Metallex</span><span>&nbsp;&copy;&nbsp;</span><span class="copyright-year"></span>. Все права защищены. <a href="https://t.me/desorr1"> Создано здесь.</a></p>
               </div>
               <div class="col-md-6 text-md-right">
                 <ul class="list-inline-xxs">
                   <li>
-                    <p>Follow Us</p>
+                    <p>Подписывайтесь</p>
                   </li>
-                  <li><a class="icon icon-xs icon-style-modern fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon icon-xs icon-style-modern fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon icon-xs icon-style-modern fa fa-instagram" href="#"></a></li>
+                  <li><a class="icon icon-xs icon-style-modern fa fa-telegram" href="https://t.me/desorr1"></a></li>
                 </ul>
               </div>
             </div>

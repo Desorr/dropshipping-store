@@ -12,32 +12,32 @@
       <section class="section swiper-slider_style-3 swiper-buttons-alternate">
         <div class="swiper-container swiper-slider swiper-slider_height-1" data-loop="true" data-autoplay="4200" data-simulate-touch="false" data-additional-slides="0" data-custom-prev="#swiper-prev" data-custom-next="#swiper-next" data-custom-slide-effect="interLeaveEffect">
           <div class="swiper-wrapper">
-            <div class="swiper-slide bg-gray-dark">
-              <div class="slide-inner" style="background-image: url(images/slider-slide-1-1920x749.jpg);">
+            <div class="swiper-slide bg-gray-dark" style="color:black">
+              <div class="slide-inner" style="background-image: url('{% static 'images/slider-slide-1-1920x749.jpg' %}');">
                 <div class="swiper-slide-caption">
-                  <div class="container">
-                    <h1 data-caption-animate="fadeInUpSmall">Creating Coziness</h1>
-                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Quarex is an award-winning ceramic tiles manufacture & design agency helping people across the USA to improve their houses’ interior using the best ceramics.</p><a class="button button-primary" href="#" data-caption-animate="fadeInRightSmall" data-caption-delay="550">View all Collections</a>
+                  <div class="container ">
+                    <h1 data-caption-animate="fadeInUpSmall" style="color:black">Скорость и качество</h1>
+                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Для нас важна оперативность выполнения задачи с лучшим качеством на рынке.</p><a class="button button-primary" href="{% url 'shop' %}" data-caption-animate="fadeInRightSmall" data-caption-delay="550">Посмотреть ассортимент</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="swiper-slide bg-gray-dark">
-              <div class="slide-inner" style="background-image: url(images/slider-slide-2-1920x749.jpg);">
+              <div class="slide-inner" style="background-image: url('{% static 'images/slider-slide-2-1920x749.jpg' %}');">
                 <div class="swiper-slide-caption">
                   <div class="container">
-                    <h1 data-caption-animate="fadeInUpSmall">Transforming Your Space</h1>
-                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Our company has been the leading provider of quality tiles and tile design services to customers since 1999. We pay attention to every aspect of our work.</p><a class="button button-primary" href="#" data-caption-animate="fadeInRightSmall" data-caption-delay="550">View all Collections</a>
+                    <h1 data-caption-animate="fadeInUpSmall">Преобразование вашего пространства</h1>
+                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Наша компания является ведущим поставщиком качественных товаров и услуг для клиентов с 2005 года. Мы уделяем внимание каждому аспекту нашей работы.</p><a class="button button-primary" href="{% url 'shop' %}" data-caption-animate="fadeInRightSmall" data-caption-delay="550">Посмотреть ассортимент</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide bg-gray-dark">
-              <div class="slide-inner" style="background-image: url(images/slider-slide-3-1920x749.jpg);">
+            <div class="swiper-slide bg-gray-dark" style="color:black">
+              <div class="slide-inner" style="background-image: url('{% static 'images/slider-slide-3-1920x749.jpg' %}');">
                 <div class="swiper-slide-caption">
                   <div class="container">
-                    <h1 data-caption-animate="fadeInUpSmall">Wide Product Variety</h1>
-                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Our products have a variety of textures, finishes and performance features that allow you to choose just what you need for your new interior.</p><a class="button button-primary" href="#" data-caption-animate="fadeInRightSmall" data-caption-delay="550">View all Collections</a>
+                    <h1 data-caption-animate="fadeInUpSmall" style="color:black">Широкий ассортимент</h1>
+                    <p class="big" style="max-width: 520px" data-caption-animate="fadeInRightSmall" data-caption-delay="300">Огромный выбор товаров из металла. <br>Мы всегда предоставим нужное количество материалов для ваших задумок. </p><a class="button button-primary" href="{% url 'shop' %}" data-caption-animate="fadeInRightSmall" data-caption-delay="550">Посмотреть ассортимент</a>
                   </div>
                 </div>
               </div>
@@ -46,34 +46,29 @@
           <!-- Swiper pagination-->
           <div class="swiper-pagination"></div>
           <!-- Swiper Navigation-->
-          <div class="swiper-button-prev"><span>Prev</span></div>
-          <div class="swiper-button-next"><span>Next</span></div>
+          <div class="swiper-button-prev"><span>Назад</span></div>
+          <div class="swiper-button-next"><span>Вперед</span></div>
         </div>
       </section>
        <!-- Production-->
       <section class="section section-md bg-default text-center">
         <div class="container">
-          <h2>Our Collections</h2>
+          <h2>Наши товары</h2>
           <div class="row row-70 row-lg-110 row-offset-1">
-            <div class="col-lg-6"><a class="collection" href="#">
+            <div class="col-lg-6"><a class="collection" href="{% url 'shop' %}">
                 <div class="collection-img"><img src="{% static '/images/product-01-470x303.jpg' %}" alt="" width="470" height="303"/>
                 </div>
-                <h4 class="collection-title">Balkan Beige</h4></a>
+                <h4 class="collection-title">Труба профильная</h4></a>
             </div>
-            <div class="col-lg-6"><a class="collection" href="#">
+            <div class="col-lg-6"><a class="collection" href="{% url 'shop' %}">
                 <div class="collection-img"><img src="{% static '/images/product-02-470x303.jpg' %}" alt="" width="470" height="303"/>
                 </div>
-                <h4 class="collection-title">Novabell</h4></a>
+                <h4 class="collection-title">Арматура</h4></a>
             </div>
-            <div class="col-lg-6"><a class="collection" href="#">
+            <div class="col-lg-12"><a class="collection" href="{% url 'shop' %}">
                 <div class="collection-img"><img src="{% static '/images/product-03-470x303.jpg' %}" alt="" width="470" height="303"/>
                 </div>
-                <h4 class="collection-title">Calacata Limestone</h4></a>
-            </div>
-            <div class="col-lg-6"><a class="collection" href="#">
-                <div class="collection-img"><img src="{% static '/images/product-04-470x303.jpg' %}" alt="" width="470" height="303"/>
-                </div>
-                <h4 class="collection-title">Grasmere</h4></a>
+                <h4 class="collection-title">Уголок профильный</h4></a>
             </div>
           </div>
         </div>
@@ -84,14 +79,14 @@
           <div class="row row-50 justify-content-md-center justify-content-lg-between align-items-lg-center">
             <div class="col-md-10 col-lg-6 col-xl-5 wow fadeInLeftSmall">
               <div class="block-wrap-1">
-                <h2>About Our Company</h2>
-                <p>We are a team that brings together top-notch refinement and exports it to more than 110 countries the world. Our products form the basics of the best interiors worldwide.</p><a class="button button-darker" href="about-us.html">read more</a>
+                <h2>О нашей компании</h2>
+                <p>Мы — команда, которая объединяет первоклассные продукты и экспортирует их в более чем 110 стран мира. Наши продукты составляют основу лучших зданий мира.</p><a class="button button-darker" href="{% url 'about_us' %}">Подробнее</a>
               </div>
             </div>
             <div class="col-md-10 col-lg-6 col-xl-7 d-flex wow fadeInRightSmall">
               <div class="thumb-video thumb-video_bordered"><img class="thumb-video__image" src="{% static '/images/video-preview-962x465.jpg' %}" alt="" width="962" height="465"/>
-                <div class="thumb-video__caption"><a class="thumb-video__button" href="//vimeo.com/123196494" data-lightgallery="item"></a>
-                  <h4 class="thumb-video__title">Video Presentation</h4>
+                <div class="thumb-video__caption"><a class="thumb-video__button" href="//vimeo.com/132676174" data-lightgallery="item"></a>
+                  <h4 class="thumb-video__title">Видео презентация</h4>
                 </div>
               </div>
             </div>
@@ -104,49 +99,49 @@
           <div class="isotope-wrap isotope-modern-wrap">
             <!-- Section Header-->
             <div class="section__header">
-              <h2>Products</h2>
-              <div class="section__header-element"><a class="link-cta" href="#">view all products</a></div>
+              <h2>Товары</h2>
+              <div class="section__header-element"><a class="link-cta" href="{% url 'shop' %}"><b>Посмотреть все товары</b></a></div>
             </div>
             <div class="isotope" data-isotope-layout="fitRows" data-isotope-group="products">
               <div class="row row-offset-2">
                 <div class="col-6 col-md-4 col-lg-3 isotope-item" data-filter="Category 1">
                   <!-- Product-->
-                  <article class="product"> <a class="product__image-wrap" href="#"><img class="product__image" src="{% static '/images/product-01-210x200.jpg' %}" alt="" width="210" height="200"/></a>
+                  <article class="product"> <a class="product__image-wrap" href="{% url 'shop' %}"><img class="product__image" src="{% static '/images/product-01-210x200.jpg' %}" alt="" width="210" height="200"/></a>
                     <div class="product__main">
-                      <p class="product__title"><a href="#">Textured White Tiles</a></p>
-                      <p class="product__price">from $350</p>
+                      <p class="product__title"><a href="#">Труба профильная</a></p>
+                      <p class="product__price">от 200 руб.</p>
                     </div>
-                    <div class="product__footer"><a class="button button-xs button-gray-2" href="#">details</a></div>
+                    <div class="product__footer"><a class="button button-xs button-gray-2" href="{% url 'contacts' %}">Подробнее</a></div>
                   </article>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 isotope-item" data-filter="Category 2">
                   <!-- Product-->
-                  <article class="product"> <a class="product__image-wrap" href="#"><img class="product__image" src="{% static '/images/product-02-210x200.jpg' %}" alt="" width="210" height="200"/></a>
+                  <article class="product"> <a class="product__image-wrap" href="{% url 'shop' %}"><img class="product__image" src="{% static '/images/product-02-210x200.jpg' %}" alt="" width="210" height="200"/></a>
                     <div class="product__main">
-                      <p class="product__title"><a href="#">Basketweave Tiles</a></p>
-                      <p class="product__price">from $450</p>
+                      <p class="product__title"><a href="#">Уголок профильный</a></p>
+                      <p class="product__price">от 450 руб.</p>
                     </div>
-                    <div class="product__footer"><a class="button button-xs button-gray-2" href="#">details</a></div>
+                    <div class="product__footer"><a class="button button-xs button-gray-2" href="{% url 'contacts' %}">Подробнее</a></div>
                   </article>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 isotope-item" data-filter="Category 1">
                   <!-- Product-->
-                  <article class="product"> <a class="product__image-wrap" href="#"><img class="product__image" src="{% static '/images/product-03-210x200.jpg' %}" alt="" width="210" height="200"/></a>
+                  <article class="product"> <a class="product__image-wrap" href="{% url 'shop' %}"><img class="product__image" src="{% static '/images/product-03-210x200.jpg' %}" alt="" width="210" height="200"/></a>
                     <div class="product__main">
-                      <p class="product__title"><a href="#">Vellum Tiles</a></p>
-                      <p class="product__price">from $250</p>
+                      <p class="product__title"><a href="#">Арматура</a></p>
+                      <p class="product__price">от 100 руб.</p>
                     </div>
-                    <div class="product__footer"><a class="button button-xs button-gray-2" href="#">details</a></div>
+                    <div class="product__footer"><a class="button button-xs button-gray-2" href="{% url 'contacts' %}">Подробнее</a></div>
                   </article>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 isotope-item" data-filter="Category 2">
                   <!-- Product-->
-                  <article class="product"> <a class="product__image-wrap" href="#"><img class="product__image" src="{% static '/images/product-04-210x200.jpg' %}" alt="" width="210" height="200"/></a>
+                  <article class="product"> <a class="product__image-wrap" href="{% url 'shop' %}"><img class="product__image" src="{% static '/images/product-04-210x200.jpg' %}" alt="" width="210" height="200"/></a>
                     <div class="product__main">
-                      <p class="product__title"><a href="#">Stone Wall Tiles</a></p>
-                      <p class="product__price">from $590</p>
+                      <p class="product__title"><a href="#">Другое</a></p>
+                      <p class="product__price">от 50 руб.</p>
                     </div>
-                    <div class="product__footer"><a class="button button-xs button-gray-2" href="#">details</a></div>
+                    <div class="product__footer"><a class="button button-xs button-gray-2" href="{% url 'contacts' %}">Подробнее</a></div>
                   </article>
                 </div>
               </div>
@@ -157,23 +152,23 @@
       <!-- Latest News-->
       <section class="section section-md bg-gray-4 text-center">
         <div class="container">
-          <h2>Latest News</h2>
+          <h2>Последние новости</h2>
           <div class="row row-50">
             <div class="col-md-6 wow fadeInRightSmall">
              <!-- Post boxed-->
-              <article class="post-boxed"><a class="post-boxed__image-wrap" href="#"><img class="post-boxed__image" src="{% static '/images/post-1-524x355.jpg' %}" alt="" width="524" height="355"/></a>
+              <article class="post-boxed"><a class="post-boxed__image-wrap" href="{% url 'shop' %}"><img class="post-boxed__image" src="{% static '/images/post-1-524x355.jpg' %}" alt="" width="524" height="355"/></a>
                 <div class="post-boxed__main">
-                  <time class="post-boxed__time" datetime="2018"><span class="big">25</span><span>March</span></time>
-                  <p class="post-boxed__title"><a href="#">Choosing the Right Tile Size for <br> Your Bathroom: 5 Important Tips</a></p>
+                  <time class="post-boxed__time" datetime="2018"><span class="big">25</span><span>Марта</span></time>
+                  <p class="post-boxed__title"><a href="{% url 'shop' %}">Стальные листы. <br> Готовы пополнить наш ассортимент!</a></p>
                 </div>
               </article>
             </div>
             <div class="col-md-6 wow fadeInRightSmall" data-wow-delay=".15s">
               <!-- Post boxed-->
-              <article class="post-boxed"><a class="post-boxed__image-wrap" href="#"><img class="post-boxed__image" src="{% static '/images/post-2-524x355.jpg' %}" alt="" width="524" height="355"/></a>
+              <article class="post-boxed"><a class="post-boxed__image-wrap" href="{% url 'shop' %}"><img class="post-boxed__image" src="{% static '/images/post-2-524x355.jpg' %}" alt="" width="524" height="355"/></a>
                 <div class="post-boxed__main">
-                  <time class="post-boxed__time" datetime="2018"><span class="big">01</span><span>February</span></time>
-                  <p class="post-boxed__title"><a href="#">Best Tiles for Your Kitchen: <br> The Latest Collections of 2018</a></p>
+                  <time class="post-boxed__time" datetime="2018"><span class="big">01</span><span>Февраля</span></time>
+                  <p class="post-boxed__title"><a href="{% url 'shop' %}">Профнастил. <br>Ожидается скорое поступление! </a></p>
                 </div>
               </article>
             </div>

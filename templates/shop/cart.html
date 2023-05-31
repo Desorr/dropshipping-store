@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   Cart
+{% endblock title %}
+
+{% block container %}
+
+<!-- content start -->
+  <div class="main-content-wrapper">
+       <section class="breadcrumbs-custom bg-image" style="background-image: url('{% static 'images/bg-image-2.jpg' %}');">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-5">
+                      <div class="breadcrumb-wrapper">
+                          <h2>Корзина</h2>
+                          <ul class="breadcrumbs-custom__path">
+                              <li><a href="{% url 'shop' %}">Товары</a></li>
+                              <li class="active">Корзина</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </section>
+
+
+      <section class="selection">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-9">
+                      <div class="main-heading-block">
+                          <h2 class="main-heading"></h2>
+                          <!-- <p>EXERCITATIONEM ULLAM CORPORIS</p> -->
+                      </div>
+                  </div>
+              </div>
+              <hr class="hr"/>
+              <div class="row" style="color:black">
+                  <div class="col-12 col-md-1 item"><b>#</b>
+                  </div>
+                  <div class="col-12 col-md-4 item"><b>Товар</b>
+                  </div>
+                  <div class="col-12 col-md-2 item"><b>Количество, шт</b>
+                  </div>
+                  <div class="col-12 col-md-2 item"><b>Цена, руб</b>
+                  </div>
+                  <div class="col-12 col-md-2 item"><b>Сумма, руб</b>
+                  </div>
+                  <div class="col-12 col-md-1 item"><b>Действие</b>
+                  </div>
+              </div>
+              <hr class="hr"/>
+                    {% if not items %}
+                        <br><br>
+                        <div class="col-12 col-md-10 item">
+                            <h2 style="color:black">В вашей корзине отсутствуют товары!</h2>
+                        </div>
+          </div>
+                    <br><br>
+                    {% else %}
+                    {% for item in items %}
+                    <div class="row" style="color: black">
+                        <div class="col-12 col-md-1 item">
+                            {{ forloop.counter }}
+                        </div>
+                        <div class="col-12 col-md-4 item">
+                            {{ item.product }}
+                        </div>
+                        <div class="col-12 col-md-2 item">
+                            {{ item.quantity }}
+                        </div>
+                        <div class="col-12 col-md-2 item">
+                            {{ item.price }}
+                        </div>
+                        <div class="col-12 col-md-2 item">
+                            {{ item.amount }}
+                        </div>
+                         <div class="col-12 col-md-1 item">
+                             <form method="post" action="{% url 'cart_delete_item' item.pk %}">
+                                {% csrf_token %}
+                                <button type="submit" style="color: #FF0000"><u>delete</u></button>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+            <hr class="hr"/>
+
+          <div class="row" style="color:#FF9A00">
+              <div class="col-12 col-md-7 item"></div>
+              <div class="col-12 col-md-2 item"><b>Итоговая сумма:</b>
+              </div>
+              <div class="col-12 col-md-2 item"><b>
+                    {{ cart.amount }} руб.</b>
+              </div>
+          </div>
+
+
+          <hr class="hr"/>
+          {% if not items %}
+          <div class="row" style="color:#FF9A00">
+              <div class="col-12 col-md-8  item"></div>
+              <div class="col-12 col-md-2 item">
+                 <a class="button button-xs button-lighter" href="{% url 'shop' %}">
+                    Перейти к товарам
+                    </a>
+              </div>
+          </div>
+          {% else %}
+          <div class="row" style="color:#FF9A00">
+              <div class="col-12 col-md-8  item"></div>
+              <div class="col-12 col-md-2 item">
+                 <a class="button button-xs button-lighter" href="{% url 'shop' %}">
+                        Перейти к Товарам
+                 </a>
+              </div>
+              <div class="col-12 col-md-2 item">
+                  <a class="button button-xs button-lighter" href="{% url 'make_order' %}">
+                        Перейти к Оплате
+                  </a>
+              </div>
+          </div>
+          {% endif %}
+      </section>
+  </div>
+      {% endblock container %}

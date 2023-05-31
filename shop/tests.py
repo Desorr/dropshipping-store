@@ -165,7 +165,6 @@ class TestDataBase(TestCase):
         amount = Payment.get_balance(self.user)
         self.assertEqual(amount, Decimal(0))
 
-
     def test_auto_payment_after_apply_make_order_true(self):
         """Check auto payment after applying make_order():
         1. There is a required amount
