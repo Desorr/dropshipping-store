@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'keks123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -132,4 +136,4 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 URL_SCRAPING_DOMAIN = 'https://www.stroysa.tomsk.ru'
-URL_SCRAPING = 'https://www.stroysa.tomsk.ru/catalog/profilnye_truby_ugolki'
+URL_SCRAPING = 'https://www.stroysa.tomsk.ru/catalog/profilnye_truby_ugolki/'
