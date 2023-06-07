@@ -45,11 +45,22 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand"><a class="brand" href="{% url 'index' %}">
-                      <div class="brand__name"><img src="{% static '/images/logo-default-380x100.png' %}" alt="" width="190" height="50"/>
+                      <div class="brand__name"><img src="{% static '/images/logo-default-380x100.png' %}" alt="" width="150" height="50"/>
                       </div></a></div>
                 </div>
                 <!-- RD Navbar Nav-->
                 <div class="rd-navbar-nav-wrap">
+                  <div class="row" style="color:#FF9A00">
+                    {% if user.is_authenticated %}
+                        <div class="col-12 col-md-2 item"></div>
+                        <div class="col-12 col-md-10 item"><b>Баланс: {{ balance }} руб.</b></div>
+                        <div class="col-12 col-md-2 item"></div>
+                    {% else %}
+                        <div class="col-12 col-md-2 item"></div>
+                        <div class="col-12 col-md-10 item"><b>Баланс: {{ balance }}</b></div>
+                        <div class="col-12 col-md-2 item"></div>
+                    {% endif %}
+                  </div>
                   <a class="button button-xs button-lighter" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% if user.is_authenticated %}
                         {{ user.username }}

@@ -7,6 +7,7 @@ from .scraping import scraping, ScrapingError
 from .models import Product, Order, OrderItem
 from .forms import AddQuantityForm
 
+
 def fill_database(request):
     if request.method == 'POST' and request.user.is_staff:
         try:
