@@ -138,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 URL_SCRAPING_DOMAIN = 'https://www.stroysa.tomsk.ru'
 URL_SCRAPING = 'https://www.stroysa.tomsk.ru/catalog/profilnye_truby_ugolki/'
+
+TELEGRAM_BOT_TOKEN = '6062776948:AAHSRM6TK_7I1Ztx8BhmejRSDsjhubrTHqs'
+TELEGRAM_CHAT_ID = '5244159317'

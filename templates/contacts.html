@@ -27,8 +27,9 @@
                 <h3>Связаться с нами</h3>
                 <p>Мы доступны 24/7 по электронной почте или по телефону. Вы также можете использовать нашу форму быстрой связи, чтобы задать вопрос о наших товарах и услугах.</p>
                 <!-- RD Mailform-->
-                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                  <div class="row align-items-md-end row-20">
+                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{% url 'contacts' %}">
+                  {% csrf_token %}
+                <div class="row align-items-md-end row-20">
                     <div class="col-md-6">
                       <div class="form-wrap">
                         <input class="form-input" id="contact-first-name" type="text" name="first-name" data-constraints="@Required">
@@ -85,7 +86,7 @@
                 <p class="heading-8">Адрес</p>
                 <div class="unit flex-row unit-spacing-xxs">
                   <div class="unit__left"><span class="icon icon-sm icon-primary material-icons-location_on"></span></div>
-                  <div class="unit__body">РФ, г.Краснодар<br> Пушкина 15А, 222040</div>
+                  <div class="unit__body">РФ, г. Краснодар,<br>ул. Пушкина, д. 15А, 222040</div>
                 </div>
               </div>
             </div>
