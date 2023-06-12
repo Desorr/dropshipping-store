@@ -1,2 +1,2 @@
 # dropshipping-store
-Dropshipping Material Store
+dropshipping-store
