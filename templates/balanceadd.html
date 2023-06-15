@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   Пополнение баланса
+{% endblock title %}
+
+{% block container %}
+   <!-- Breadcrumbs-->
+   <section class="breadcrumbs-custom bg-image" style="background-image: url('{% static 'images/bg-balance.jpg' %}');">
+      <div class="container">
+         <h2 class="breadcrumbs-custom__title">Пополнение баланса</h2>
+         <ul class="breadcrumbs-custom__path">
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li class="active">Баланс</li>
+         </ul>
+      </div>
+   </section>
+
+   <section class="section section-lg bg-default">
+      <div class="container">
+         <div class="layout-bordered">
+            <div class="layout-bordered__main text-center">
+               <div class="layout-bordered__main-inner">
+                  <h3>Форма для пополнения</h3>
+                  <p>Введите сумму для пополнения вашего баланса</p>
+                  <!-- RD Mailform-->
+                  <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{% url 'balance_add' %}">
+                     {% csrf_token %}
+                     <div class="row align-items-md-end row-20">
+                        <div class="col-md-6">
+                           <div class="form-wrap">
+                              <input class="form-input" id="contact-first-name" type="text" name="amount" pattern="^\d+(,\d{1,2})?$" title="Пожалуйста, введите число с двумя знаками после запятой или целое число." required>
+                              <label class="form-label" for="contact-first-name">Сумма руб.</label>
+                              <div class="invalid-feedback">Вводите только цифры!</div>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <button class="button button-block button-primary" id="submit-button" type="submit" disabled>Пополнить</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script>
+      // Добавляем обработчик события input для проверки ввода
+      var amountInput = document.querySelector('#contact-first-name');
+      var submitButton = document.querySelector('#submit-button');
+      var errorFeedback = document.querySelector('.invalid-feedback');
+
+      amountInput.addEventListener('input', function(event) {
+         var amountPattern = /^\d+(,\d{1,2})?$/;
+
+         if (!amountPattern.test(amountInput.value.replace(/\s/g, ''))) {
+            amountInput.setCustomValidity('Пожалуйста, введите число с двумя знаками после запятой или целое число.');
+            amountInput.classList.add('is-invalid');
+            submitButton.disabled = true;
+            errorFeedback.style.display = 'block';
+         } else {
+            amountInput.setCustomValidity('');
+            amountInput.classList.remove('is-invalid');
+            submitButton.disabled = false;
+            errorFeedback.style.display = 'none';
+         }
+      });
+   </script>
+{% endblock container %}

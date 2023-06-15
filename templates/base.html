@@ -54,10 +54,16 @@
                     {% if user.is_authenticated %}
                         <div class="col-12 col-md-2 item"></div>
                         <div class="col-12 col-md-10 item"><b>Баланс: {{ balance }} руб.</b></div>
+                      {% if user.is_authenticated %}
+                    <a class="btn btn-primary btn-sm ml-auto mr-auto" href="{% url 'balance_add' %}">Пополнить</a>
+                      {% endif%}
                         <div class="col-12 col-md-2 item"></div>
                     {% else %}
                         <div class="col-12 col-md-2 item"></div>
                         <div class="col-12 col-md-10 item"><b>Баланс: {{ balance }}</b></div>
+                    {% if user.is_authenticated %}
+                        <a class="btn btn-primary btn-sm ml-auto mr-auto" href="{% url 'balance_add' %}">Пополнить</a>
+                    {% endif%}
                         <div class="col-12 col-md-2 item"></div>
                     {% endif %}
                   </div>

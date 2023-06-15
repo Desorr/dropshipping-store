@@ -3,6 +3,8 @@ from django.conf import settings
 from telegram import Bot
 from telegram.error import TelegramError
 import asyncio
+from shop.models import Payment
+
 
 
 def index(request):
@@ -37,3 +39,17 @@ def contacts(request):
 
     # Возвращение страницы с формой для GET-запроса
     return render(request, 'contacts.html')
+
+
+def balance_add(request):
+    if request.method == 'POST':
+        amount = request.POST.get('amount')
+        if amount:
+            user = request.user
+            Payment.objects.create(user=user, amount=amount)
+    return render(request, 'balanceadd.html')
+
+
+
+
+

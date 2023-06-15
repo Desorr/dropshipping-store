@@ -29,7 +29,7 @@ class Payment(models.Model):
     comment = models.TextField(blank=True, null=True)
 
     class Meta:
-        ordering = ['pk']
+        ordering = ['-pk']
 
     def __str__(self):
         return f'{self.user} - {self.amount}'
